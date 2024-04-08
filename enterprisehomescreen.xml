@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><config>
+  <kiosk>
+    <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
+  </kiosk>
+  <applications>
+    <application label="GPS Logger" package="eu.basicairdata.graziano.gpslogger" activity="eu.basicairdata.graziano.gpslogger.GPSActivity"/>
+    <application label="GPS Test" package="com.chartcross.gpstest" activity="com.chartcross.gpstest.MainActivity"/>
+    <application label="Maps" package="com.google.android.apps.maps" activity="com.google.android.maps.MapsActivity"/>
+  <application label="Device Info HW" package="ru.andr7e.deviceinfohw" activity="ru.andr7e.deviceinfohw.MainActivity"/>
+  <application label="Waze" package="com.waze" activity="com.waze.FreeMapAppActivity"/>
+  </applications>
+  <tools>
+    <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
+  </tools>
+  <passwords>
+    <admin attempts="1"/>
+  </passwords>
+  <user_options/>
+  <preferences>
+    <orientation/>
+    <wallpaper/>
+    <usb_debugging_disabled>0</usb_debugging_disabled>
+    <icon_label_text_color>#FFFFFFFF</icon_label_text_color>
+    <foreground_service_auto_launch_enable>0</foreground_service_auto_launch_enable>
+    <recent_apps_button_disabled>0</recent_apps_button_disabled>
+    <auto_launch_enable>0</auto_launch_enable>
+    <system_settings_restricted>0</system_settings_restricted>
+    <recent_apps_access_disabled>0</recent_apps_access_disabled>
+    <icon_label_background_color>#00FFFFFF</icon_label_background_color>
+    <kiosk_mode_enabled>0</kiosk_mode_enabled>
+    <title>Enterprise Home Screen</title>
+    <wireless_info>
+      <show_ip_address>0</show_ip_address>
+      <show_mac_address>0</show_mac_address>
+      <show_bssid>0</show_bssid>
+      <show_ssid>0</show_ssid>
+      <show_scan_result>0</show_scan_result>
+    </wireless_info>
+    <screen_blanking>
+      <blanking_enabled>0</blanking_enabled>
+      <speed_threshold>10</speed_threshold>
+      <blanking_mode>1</blanking_mode>
+    </screen_blanking>
+  </preferences>
+</config>
