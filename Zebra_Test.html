@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://chatvgt.nl/zebra-new.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zebra Scan Test - New</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #scanResults {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+    }
+  </style>
+  <script type="text/javascript" charset="utf-8" src="ebapi-modules.js"></script>
+  <script type="text/javascript">
+    function loadEvent() {
+      EB.Barcode.enable({allDecoders: true}, onScan);
+    }
+
+    function unloadEvent() {
+      EB.Barcode.disable();
+    }
+
+    window.addEventListener('DOMContentLoaded', loadEvent);
+    window.addEventListener('unload', unloadEvent);
+  </script>
+</head>
+
+<body>
+  <h1>Zebra Scanner Test - New</h1>
+
+  <div id="scanResults">
+    <p>Scan a barcode to see the results</p>
+  </div>
+
+  <script>
+    function onScan(params) {
+      console.log('Scanned data:', params);
+
+      // Get the results div
+      const resultsDiv = document.getElementById('scanResults');
+
+      if (params['data'] == "" || params['time'] == "") {
+        resultsDiv.innerHTML = "Failed!";
+        return;
+      }
+
+      resultsDiv.innerHTML = `
+                <h3>Scan Received!</h3>
+                <p>Scanned Data: <strong>${params['data']}</strong></p>
+                <p>Timestamp: ${params['time']}</p>
+            `;
+    }
+
+    function simulateScan() {
+      const testData = document.getElementById('testInput').value;
+      if (testData) {
+        onScan({data: testData, time: new Date().toLocaleString()});
+      }
+    }
+  </script>
+
+  <div style="margin-top: 20px;">
+    <input type="text" id="testInput" placeholder="Manually enter scan data">
+    <button onclick="simulateScan()">Simulate Scan</button>
+  </div>
+
+
+
+</body></html>
