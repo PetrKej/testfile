@@ -21,15 +21,18 @@
     }
   </style>
   <script type="text/javascript" charset="utf-8" src="ebapi-modules.js"></script>
-  <script type="text/javascript">
-    function enableScanners(){
-      EB.Barcode.enable({}, scanReceived);
-    }
+ <script type="text/javascript">
+  function loadEvent() {
+    EB.Barcode.enable({allDecoders: true}, onScan);
+  }
 
-    function unloadEvent() {
-      EB.Barcode.disable();
-    }
-  </script>
+  function unloadEvent() {
+    EB.Barcode.disable();
+  }
+
+  window.addEventListener('DOMContentLoaded', loadEvent);
+  window.addEventListener('unload', unloadEvent);
+</script>
 </head>
 
 <body>
