@@ -1,0 +1,44 @@
+﻿.content
+{
+    background-color: #ffffff;
+}
+.logo
+{
+    padding-top: 8px;
+}
+.fieldSetStyle
+{
+    border-style: none;
+    /*-style: none*/;
+}
+.failureNotification
+{
+    color: #850606;
+    font-size: 8pt;
+}
+.requiredFieldStar
+{
+    color: Red;
+    font-size: 12pt;
+}
+.notification
+{
+    font-size: 8pt;
+    padding-left: 20px;
+    padding-top: 5px;
+    color: #850606;
+    text-align: left;
+    font-style: italic;
+    display: block;
+}
+.bottomContainer {
+    border-style: solid none solid none;
+    border-width: 1px;
+    border-color: #FFFFFF;
+    background-color: #007c72;
+    color: White;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+}

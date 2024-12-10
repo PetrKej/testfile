@@ -1,0 +1,76 @@
+﻿html {
+    overflow-y: auto; /* Hide the default scrollbar at Skorpio scanners */
+}
+body
+{
+    background-color: #FFFFFF;
+    background-image: url('background.jpg');
+    background-repeat: repeat;
+    font-family: 'Segoe UI';
+    font-size: 9pt;
+    margin: 0px;
+    padding: 0px;
+}
+.pageContainer
+{
+   position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    height:100%;
+}
+.globalInformationContainter
+{
+    background-color: Gray;
+    height: 20px;
+    overflow-y: hidden; /* Even when we've set the height to 20px, the Skorpio scanner will show the bar with 25px height */
+    font-style: italic;
+    color: #FFFFFF;
+}
+.footer
+{
+    background-color: #343435;
+    height: 40px;
+    display:none;
+}
+.ActionButtons {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+@media (min-height: 500px) {
+    .ActionButtons {
+         visibility: visible; /* Set visible to show the action buttons when the screenheight > 500px, is for testing in IE */
+    }
+}
+.ActionButtonsExtra {
+    position: absolute;
+    top: 0px;
+    left: 70px;
+    visibility: hidden;
+}
+@media (min-height: 500px) {
+    .ActionButtonsExtra {
+        visibility: visible; /* Set visible to show the action buttons when the screenheight > 500px, is for testing in IE*/
+    }
+}
+.activeActionButton
+{
+    background-color: Yellow;
+}
+.content
+{
+    height: 95%;
+}
+.okCancelButtons input
+{
+    margin: 0px;
+    font-size: 13px;
+}
+.barcodeImage
+{
+    margin-left: 10px;
+}
+
