@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0067)https://axiansscanner.azurewebsites.net/Axians365Test/MainMenu.aspx -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta http-equiv="AddressBar" content="Hide"><meta http-equiv="QuitButton" content="Show"><meta http-equiv="Signal" content="Show"><meta http-equiv="Signal" content="x=-200">
+    <meta http-equiv="SignalNavigate" content="Javascript:OnSignal(&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;);">
+    <meta http-equiv="Battery" content="Show"><meta http-equiv="Battery" content="x=-200">
+    <meta http-equiv="BatteryNavigate" content="Javascript:OnBattery(&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;);">
+    <meta http-equiv="KeyState" content="Show"><meta http-equiv="OnKey0x7D" content="Javascript:OKKeyPressed();"><meta http-equiv="OnKey0x7E" content="Javascript:CancelKeyPressed();"><meta http-equiv="OnKey0x27" content="Javascript:RightKeyPressed();"><meta http-equiv="OnKey0x25" content="Javascript:LeftKeyPressed();"><meta http-equiv="OnKey0xD" content="Javascript:OKKeyPressed();"><meta http-equiv="OnKey0x3F00" content="Javascript:CancelKeyPressed();"><meta http-equiv="OnKey0x4B00" content="Javascript:RightKeyPressed();"><meta http-equiv="OnKey0x4D00" content="Javascript:LeftKeyPressed();"><meta http-equiv="KeyCapture" content="KeyValue:0x42; Dispatch:False; KeyEvent:url(&#39;Javascript:OKKeyPressed();&#39;)"><meta http-equiv="KeyCapture" content="KeyValue:0x04; Dispatch:False; KeyEvent:url(&#39;Javascript:CancelKeyPressed();&#39;)"><meta http-equiv="KeyCapture" content="KeyValue:0x6F; Dispatch:False; KeyEvent:url(&#39;Javascript:CancelKeyPressed();&#39;)"><meta http-equiv="KeyCapture" content="KeyValue:0x20; Dispatch:False; KeyEvent:url(&#39;Javascript:RightKeyPressed();&#39;)"><meta http-equiv="KeyCapture" content="KeyValue:0x1D; Dispatch:False; KeyEvent:url(&#39;Javascript:LeftKeyPressed();&#39;)"><meta http-equiv="Signal" content="visibility:Hidden"><meta http-equiv="Battery" content="visibility:Hidden">
+    <meta http-equiv="Scanner" content="Enabled">
+    <meta http-equiv="ScannerNavigate" content="Javascript:OnScan(&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;);">
+    <link href="./MainMenu.aspx_files/loginStyle.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" charset="utf-8" src="./MainMenu.aspx_files/ebapi-modules.js.download"></script>
+    <script type="text/javascript">
+        function OnScan(data, source, type, time, length) {
+            Form1.hfBarcode.value = data;
+            Form1.hfBarcodeSource.value = source;
+            Form1.btProcessBarcode.click();
+        }
+        function loadEvent() {
+            EB.Barcode.enable({ allDecoders: true }, onScan);
+        }
+
+        function unloadEvent() {
+            EB.Barcode.disable();
+        }
+
+        window.addEventListener('DOMContentLoaded', loadEvent);
+        window.addEventListener('unload', unloadEvent);
+    </script>
+<meta http-equiv="I2OF5" content="Enabled">
+<meta http-equiv="I2OF5-MinLength" content="0">
+<meta http-equiv="I2OF5-MaxLength" content="16">
+<meta http-equiv="I2OF5-Redundancy" content="true">
+<meta http-equiv="I2OF5-ReportCheckDigit" content="true">
+<title>
+
+</title><link href="./MainMenu.aspx_files/masterPageStyle.css" rel="stylesheet" type="text/css">
+    
+    <script type="text/javascript">
+        function KeyTest(s) {
+            alert("Key: 0x" + parseInt(s).toString(16));
+        }
+
+        
+
+        function OnBattery(AC, main, backup, chemisrty) {
+            var batLevel = 100;
+            if (main <= 90)
+                batLevel = 80;
+            if (main <= 70)
+                batLevel = 60;
+            if (main <= 50)
+                batLevel = 40;
+            if (main <= 30)
+                batLevel = 20;
+            if (main <= 10)
+                batLevel = 0;
+
+            var file = document.getElementById("imgBattery").src;
+            document.getElementById("imgBattery").src = ComposeFileName(file, batLevel);
+        }
+
+        function SetSignalImage(singal) {
+            var sigLevel = 100;
+            if (singal <= 90)
+                sigLevel = 80;
+            if (singal <= 70)
+                sigLevel = 60;
+            if (singal <= 50)
+                sigLevel = 40;
+            if (singal <= 30)
+                sigLevel = 20;
+            if (singal <= 10)
+                sigLevel = 0;
+
+            var file = document.getElementById("imgWireless").src;
+            document.getElementById("imgWireless").src = ComposeFileName(file, sigLevel);
+        }
+
+        function ComposeFileName(file, number) {
+            var splitFile = file.split("_", 2);
+            return splitFile[0] + "_" + number + ".jpg";
+        }
+
+        function OKKeyPressed() {
+            try {
+                Form1.ActionButtons_btOK.click();
+                
+            } catch (e) {
+                try {
+                    Form1.MainContent_LoginUser_btOK.click();
+                }
+                catch (er) {
+            
+                }
+            }
+        }
+        function CancelKeyPressed() {
+            try {
+                Form1.ActionButtons_btCancel.click();
+                } catch (e) {
+                
+                }
+        }
+
+        function RightKeyPressed() {
+            try {
+                Form1.MainContent_btNext.click();
+            }
+            catch (e) {
+
+            }
+        }
+        function LeftKeyPressed() {
+            try {
+                Form1.MainContent_btPrev.click();
+            }
+            catch (e) {
+
+            }
+        }
+    </script>
+    <style type="text/css">
+        #WirelessConnection
+        {
+            visibility: hidden;
+            z-index: 99999;
+            background-color: #788FBC;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+</head>
+<body data-new-gr-c-s-check-loaded="14.1211.0" data-gr-ext-installed="">
+    <form method="post" action="https://axiansscanner.azurewebsites.net/Axians365Test/MainMenu.aspx" id="Form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="dSSnyhlaJ+2gNIFR/XL+KGLdJZe1nb3ZHt/7SzxWR8nO4kd4XlygA+REvslIxOqp++jQNWShW2+tS9xp1j21tqJb6wiDdgtlK3+vwOZvLWgr2uulacWQTxbzf3j7Cwjt3UKoCqnAggVZEU5qGPOtsROL/voyfr2H4jENl5bTnHAqGHnl80acXfGPmtrmeeCXYSCztphm3YFzzqscQEq6CqNsdICq9veJOmVs5XhiOcmvQkniWn93GXaM0IcWIfbjmLZquwzhEb64mHapvgy4s89MOv0dswYvZ5Ih5pZqdZY3mRgE5j7jn0fB+eQV8C+cIkOjfNS7CiMsIwMuqZ6b7no6ttNiMLA0F0EUP3vCigpFHtCPrZz8ndi1q9jlY2ULGq3xx6WUvH9/eXjKq+vH3RLdwDdDCLKUmDBKFHw7Tgf9yHMDnsXx+80R4/ycZloZNIFi5Zpa0wVfa3V/54M7/LHr/6L9757AKPfnyJ3bCH/0SPjcQyiPEUJfakaPuwgX7D7Fx8S/WxBL5CwtR6LQilQP9WNs8eYAP0iUT2u0wtX/VFYbgfrOl/qxIyx8rdVBzpcfO21hlHXcgVWtT7Offl9RbLiopXt9QMhl7X/LTweUydmYdTtkVghES8tER7xMcdl8KZhEMYuA+Qt+xdMuLxe6DnAdhMkkjFLMGz2Y8rrs5DC453jPDIYC1ywQ+aTKQ0KnjlkXfVeNHWDEfjcKVA==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['Form1'];
+if (!theForm) {
+    theForm = document.Form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="./MainMenu.aspx_files/WebResource.axd" type="text/javascript"></script>
+
+
+<script src="./MainMenu.aspx_files/ScriptResource.axd" type="text/javascript"></script>
+<script src="./MainMenu.aspx_files/ScriptResource(1).axd" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="4C82BEE6">
+	<input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="XbxdFy7aLs8SFnrUyFTaJPYFItjt70kJzovDgpVcPBs-9kwzEq055hiAy10aoVCTmQh8m8yMGW1us1_NOPW8PkHL6r5c9GxYnHP5yCfn1LE1">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="MThbcP+Zs0BTPLhKiy7X3KbG6TbbqtDJIOa+7ceOnE/u5LymTy7qHSV+WAX2CzOrnlP5ba4j0m+12KNB0o0erh9L1PRGIziFJZtZPUHJ3NM/urgIL5CTxL6BpndABNKb2zhO+0cizOJxCfzK93a6Wk/CT4cYKHhwErTqOHTbTwcaXEK2ole6gR5H0VNy6LZ91TWrzdLgqgjQDs9WfU4cpihJhmTgidC98bYTSNdCVJJJTcVg5FYU6n01UPeqkLfxwzr0dLJHh4UZgYpnbe7/8sDT+IjPYYX0gFV6gfdME/9Mb1G3dDRxHTKvWyAHqs2SvaBmLLn8aKvHvRlgIJQpCK5J3bo1dxBHQt6V+PN+EYo=">
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl25', 'Form1', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    <div id="WirelessConnection">
+        <center>
+            <div style="margin-top:100px;">
+            <img id="imgSignalLost" src="./MainMenu.aspx_files/SignalLost.jpg">
+            <br>
+            <br>
+            <span id="lbSignalDetails" style="color:Red;font-size:18px;">Verbinding verbroken!</span>
+                </div>
+        </center>
+    </div>
+    <center>
+        <div class="pageContainer">
+            <div class="content">
+                
+    <center>
+        <table id="MainContent_tableMainMenu">
+	<tbody><tr>
+		<td id="MainContent_tcReceive"><input type="image" name="ctl00$MainContent$ctl13" src="./MainMenu.aspx_files/TileOntvangst_G.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$ctl13&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Receipt/OrdersToday.aspx&quot;, false, false))"></td><td id="MainContent_tcPick"><input type="image" name="ctl00$MainContent$ctl14" src="./MainMenu.aspx_files/TilePick_G.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$ctl14&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Pick/PickDocuments.aspx&quot;, false, false))"></td><td id="MainContent_tcCabinets"><input type="image" name="ctl00$MainContent$ctl15" src="./MainMenu.aspx_files/TileKasten_G.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$ctl15&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Kasten/details.aspx&quot;, false, false))"></td>
+	</tr><tr>
+		<td id="MainContent_tcInput"><input type="image" name="ctl00$MainContent$ctl16" src="./MainMenu.aspx_files/TileInvoer_Gb.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$ctl16&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Input/default.aspx&quot;, false, false))"></td><td id="MainContent_tcInventory"><input type="image" name="ctl00$MainContent$ctl17" src="./MainMenu.aspx_files/TileMagInv_G.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$ctl17&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Inventory/default.aspx&quot;, false, false))"></td><td id="MainContent_tcLabUsage"><input type="image" name="ctl00$MainContent$ctl18" src="./MainMenu.aspx_files/TileBalieVer_G.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$ctl18&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Lab_Verbruik/default.aspx&quot;, false, false))"></td>
+	</tr><tr>
+		<td id="MainContent_tcLabRetour"><input type="image" name="ctl00$MainContent$ctl19" src="./MainMenu.aspx_files/TileLabRet_G.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$ctl19&quot;, &quot;&quot;, false, &quot;&quot;, &quot;Lab_Retour/default.aspx&quot;, false, false))"></td><td id="MainContent_tcLoanIn"><input type="image" name="ctl00$MainContent$ctl20" src="./MainMenu.aspx_files/TileLeanIn_G.jpg" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$MainContent$ctl20&quot;, &quot;&quot;, false, &quot;&quot;, &quot;LoanSetIn/default.aspx&quot;, false, false))"></td><td id="MainContent_tcLogout"><input type="image" name="ctl00$MainContent$ctl21" src="./MainMenu.aspx_files/TileAfmelden.jpg"></td>
+	</tr>
+</tbody></table>
+    </center>
+    <input type="hidden" name="ctl00$MainContent$hfBarcode" id="hfBarcode">
+    <input type="hidden" name="ctl00$MainContent$hfBarcodeSource" id="hfBarcodeSource">
+
+            </div>
+            <div class="globalInformationContainter">
+                <table style="border-width: 0px; border-style: none; margin: 0px; width:100%;">
+                    <tbody><tr>
+                        <td align="left" style="width:30%">
+                            
+                                    <span class="bold">
+                                        <span id="HeadLoginView_HeadLoginName">zebra</span>
+                                    </span>
+                                
+                        </td>
+                        <td align="center">
+                            <span id="lbLocation">CMA</span>
+                        </td>
+                        <td align="right">
+                            <img id="imgBattery" src="./MainMenu.aspx_files/Battery_100.jpg" alt="Battery">
+                            <img id="imgWireless" src="./MainMenu.aspx_files/Airsignal_100.jpg" alt="Wireless Signal">
+                        </td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <div class="ActionButtons">
+                
+            </div>
+            <div class="ActionButtonsExtra">
+                
+    <input type="submit" name="ctl00$ActionButtonsExtra$btProcessBarcode" value="ProcessBarcode" id="btProcessBarcode" visibility="hidden" style="width:0px;">
+
+            </div>
+        </div>
+    </center>
+    </form>
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
