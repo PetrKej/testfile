@@ -8,9 +8,9 @@
     <meta http-equiv="Scanner" content="Enabled">
     <meta http-equiv="ScannerNavigate" content="Javascript:OnScan(&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;,&#39;%s&#39;);">
     <link href="./MainMenu.aspx_files/loginStyle.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" charset="utf-8" src="ebapi-modules.js."></script>
+    <script type="text/javascript" charset="utf-8" src="ebapi-modules.js"></script>
     <script type="text/javascript">
-        function OnScan(data, source, type, time, length) {
+        function onScan(data, source, type, time, length) {
             Form1.hfBarcode.value = data;
             Form1.hfBarcodeSource.value = source;
             Form1.btProcessBarcode.click();
