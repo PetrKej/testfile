@@ -22,9 +22,10 @@
   </style>
   <script type="text/javascript" charset="utf-8" src="ebapi-modules.js"></script>
  <script type="text/javascript">
-   loadEvent();
+ loadEvent();
    function loadEvent() {
-    EB.Barcode.enable({allDecoders: true}, onScan);
+       alert("inside loadevent");
+     EB.Barcode.enable({allDecoders: true}, onScan);
   }
 
   function unloadEvent() {
