@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><config>
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
   <applications>
     <application label="Warehouse Management" package="com.Microsoft.WarehouseManagement" activity="crc6487e66b96573fbc07.SplashActivity"/>
     <application label="Calculator" package="com.google.android.calculator" activity="com.android.calculator2.Calculator"/>
