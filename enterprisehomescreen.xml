@@ -6,6 +6,7 @@
     <application label="Edge browser" package="com.microsoft.emmx" activity="com.microsoft.ruby.Main"/>    
     <link label="FOLTEX PROD MPS Production Floor Execution" url="https://foltex-prod.operations.eu.dynamics.com/?cmp=MPS&mi=JmgProductionFloorExecution&limitednav=true" package="com.microsoft.emmx" activity=""/>
     <link label="Stalita" url="https://stalita.com" package="com.microsoft.emmx" activity=""/>
+    <link label="Stalita" url="https://www.zebra.com" package="com.microsoft.emmx" activity=""/>
   </applications>
   <tools>
     <application label="DWDemo" package="com.symbol.datawedge" activity="com.symbol.datawedge.DWDemoActivity"/>
@@ -24,6 +25,10 @@
   </user_options>
   <preferences>
     <pin_shortcuts>1</pin_shortcuts>
+    <pin_shortcuts>
+        <pin_shortcuts_enabled>1</pin_shortcuts_enabled>
+        <bypass_confirmation>1</bypass_confirmation>
+    </pin_shortcuts>
     <orientation>landscape</orientation>
     <wallpaper/>
     <usb_debugging_disabled>1</usb_debugging_disabled>
