@@ -54,7 +54,7 @@
             },
             {
                 "CameraAction":"Flash",
-                "CameraActionValue":"auto"
+                "CameraActionValue":"off"
             },
             {
                 "CameraAction":"SettingsUsage",
@@ -107,4 +107,5 @@
         ]
 
     }
+
 
