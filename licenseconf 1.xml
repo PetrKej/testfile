@@ -1,0 +1,22 @@
+﻿<wap-provisioningdoc>
+  <characteristic version="14.0" type="LicenseMgr">
+    <parm name="LicenseChoice" value="zebra" />
+    <characteristic type="LicenseZebra">
+      <parm name="LicenseActionZebra" value="reset" />
+      <characteristic type="ExistingLicenseZebra">
+        <parm name="ReturnAllLicenseSource" value="2" />
+      </characteristic>
+    </characteristic>
+  </characteristic>
+  <characteristic version="14.0" type="LicenseMgr">
+    <parm name="LicenseChoice" value="ZebraT" />
+    <characteristic type="LicenseZebraT">
+      <characteristic type="LicenseActionChoice">
+        <parm name="SelectedLicenseActionChoice" value="LLS" />
+        <parm name="FeatureName" value="eb-feature-android-eval" />
+        <parm name="FeatureVersion" value="2.0" />
+        <parm name="LocalServerUrl" value="192.168.1.236" />
+      </characteristic>
+    </characteristic>
+  </characteristic>
+</wap-provisioningdoc>
